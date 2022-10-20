@@ -1,0 +1,14 @@
+#router
+config_address: 192.168.100.5
+config_netmask: 255.255.255.0
+direccion_red: 10.0.0.0/24
+interfaz_salida: enp1s0
+
+#cliente
+cliente_address: 192.168.100.6
+cliente_netmask: 255.255.255.0
+
+#cliente2
+cliente2_address: 192.168.100.7
+cliente2_netmask: 255.255.255.0
+

@@ -1,0 +1,3 @@
+- name: "Actualizada la paquetería."
+  apt:
+    update_cache=yes upgrade=yes
