@@ -7,13 +7,15 @@
   become: true
   roles:
     - role: router
+    - role: dhcp
 
 - hosts: cliente1
   become: true
   roles:
     - role: cliente
     - role: web
-- hosts: cliente1
+
+- hosts: cliente2
   become: true
   roles:
     - role: cliente

@@ -2,13 +2,17 @@
 config_address: 192.168.100.5
 config_netmask: 255.255.255.0
 direccion_red: 10.0.0.0/24
-interfaz_salida: enp1s0
+interfaz_externa_router: enp8s0
 
-#cliente
-cliente_address: 192.168.100.6
-cliente_netmask: 255.255.255.0
-
-#cliente2
-cliente2_address: 192.168.100.7
-cliente2_netmask: 255.255.255.0
-
+#dhcp
+subred_dhcp: 10.0.0.0
+t3_dhcp: 3600
+max_lease_time: 7200 
+mascara_dhcp: 255.255.255.0
+gateway_dhcp: 10.0.0.1
+broadcast_dhcp: 10.0.0.255
+dns_dhcp: 8.8.8.8
+start_rango_dhcp: 10.0.0.10
+end_rango_dhcp: 10.0.0.100
+ip_sweb: 10.0.0.2
+mac_sweb: 52:54:00:d8:51:42

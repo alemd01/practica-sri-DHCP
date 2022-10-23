@@ -1,0 +1,31 @@
+- name: "Cambiar el bit de forwarding"
+  sysctl:
+    name: net.ipv4.ip_forward
+    value: "1"
+    state: present
+    reload: yes
+  
+- name: "Cambiar la red del router"
+  template:
+    src: interfaces
+    dest: /etc/network/interfaces
+    mode: 0644
+  notify: reiniciar maquina
+
+- name: "Configuración del servidor DHCP"
+  isc_dhcp_scopes:
+    - subnet: {{ subred_dhcp  }}
+    default_lease_time: {{ t3_dhcp }}
+    max_lease_time: {{ max_lease_time  }}
+    netmask: {{ mascara_dhcp  }}
+    options:
+     - name: routers
+       value: {{ gateway_dhcp  }}
+     - name: subnet-mask
+       value: {{ mascara_dhcp  }}
+     - name: broadcast-address
+       value: {{ broadcast_dhcp }}
+     - name: domain-name-servers
+       value: {{ dns_dhcp  }}
+    range_start: {{ start_rango_dhcp }}
+    range_end: {{ end_rango_dhcp }}

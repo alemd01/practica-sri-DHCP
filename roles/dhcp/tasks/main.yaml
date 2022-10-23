@@ -1,0 +1,11 @@
+- name: "Instalar servidor DHCP"
+  apt:
+    pkg: isc-dhcp-server
+- name: "Cambiar la configuración del servidor dhcp"
+  template:
+    src: dhcp.conf
+    dest: /etc/dhcp/dhcpd.conf
+    mode: 0644
+  notify: reiniciar maquina
+
+  
